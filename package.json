@@ -1,0 +1,36 @@
+{
+  "name": "vubsub",
+  "version": "1.0.0",
+  "description": "Pub/Sub for Node.js and MongoDB",
+  "homepage": "https://github.com/vivocha/vubsub",
+  "keywords": [
+    "node",
+    "node.js",
+    "pubsub",
+    "mubsub",
+    "mongodb"
+  ],
+  "author": {
+    "name": "Federico Pinna",
+    "email": "fpinna@vivocha.com"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/vivocha/vubsub/raw/master/LICENSE"
+    }
+  ],
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vivocha/vubsub.git"
+  },
+  "dependencies": {
+    "mongodb": ">= 1.3.0",
+    "q": ">= 0.9.4"
+  },
+  "main": "index",
+  "engines": {
+    "node": ">= 0.6.0"
+  }
+}
