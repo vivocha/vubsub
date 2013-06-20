@@ -1,6 +1,6 @@
 {
   "name": "vubsub",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Pub/Sub for Node.js and MongoDB",
   "homepage": "https://github.com/vivocha/vubsub",
   "keywords": [
