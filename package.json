@@ -1,6 +1,6 @@
 {
   "name": "vubsub",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "Pub/Sub for Node.js and MongoDB",
   "homepage": "https://github.com/vivocha/vubsub",
   "keywords": [
@@ -27,8 +27,8 @@
   },
   "dependencies": {
     "debug": "^2.1.0",
-    "mongodb": ">= 1.4.23",
-    "q": ">= 1.1.2"
+    "mongodb": "~2.0.55",
+    "q": "~1.1.2"
   },
   "main": "index",
   "engines": {
