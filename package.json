@@ -1,14 +1,38 @@
 {
   "name": "vubsub",
-  "version": "1.2.0",
+  "version": "0.0.0-development",
   "description": "Pub/Sub for Node.js and MongoDB",
-  "homepage": "https://github.com/vivocha/vubsub",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist coverage .nyc_output",
+    "clean:all": "npm run clean && rimraf node_modules",
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "_precommit": "npm run build && npm run cover && npm run check-coverage",
+    "commit": "git-cz",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "watch:test": "npm t -- -w",
+    "test": "mocha test/*.test.js",
+    "cover": "nyc --reporter=lcov --reporter=text npm t",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vivocha/vubsub.git"
+  },
   "keywords": [
     "node",
     "node.js",
     "pubsub",
     "mubsub",
     "mongodb"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "author": {
     "name": "Federico Pinna",
@@ -20,18 +44,34 @@
       "url": "http://github.com/vivocha/vubsub/raw/master/LICENSE"
     }
   ],
-  "contributors": [],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vivocha/vubsub.git"
+  "bugs": {
+    "url": "https://github.com/vivocha/eredita/issues"
+  },
+  "homepage": "https://github.com/vivocha/vubsub",
+  "devDependencies": {
+    "@types/debug": "0.0.29",
+    "@types/mongodb": "^2.2.2",
+    "@types/node": "7.0.18",
+    "chai": "3.5.0",
+    "chai-as-promised": "6.0.0",
+    "chai-spies": "0.7.1",
+    "commitizen": "2.9.6",
+    "coveralls": "2.13.1",
+    "cz-conventional-changelog": "2.0.0",
+    "husky": "0.13.3",
+    "mocha": "3.4.1",
+    "nyc": "10.3.2",
+    "rimraf": "2.6.1",
+    "semantic-release": "^6.3.6",
+    "typescript": "2.3.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   },
   "dependencies": {
-    "debug": "^2.1.0",
-    "mongodb": "~2.0.55",
-    "q": "~1.1.2"
-  },
-  "main": "index",
-  "engines": {
-    "node": ">= 0.10.0"
+    "debug": "^2.6.6",
+    "mongodb": "~2.2.26"
   }
 }
