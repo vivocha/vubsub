@@ -39,4 +39,8 @@ jspm_packages
 #TypeScript typings/definitions
 typings
 
+# IDEs project data
+.idea
+.vscode
+
 dist
